@@ -1,0 +1,255 @@
+@import '../../../vendor/sass-mq/mq';
+@import '../../../vendor/frontend/app/assets/sass/variables/_standard.scss';
+//@import '../../../vendor/frontend/app/assets/sass/mixins/_mq.scss';
+// MQ mixins
+//$mq-small: 640px;
+//$mq-large: 900px;
+// Universal
+.height-150 {
+    height: 150px;
+    height: 15rem;
+}
+
+.height-300 {
+    height: 300px;
+    height: 30rem;
+}
+
+.height-450 {
+    height: 450px;
+    height: 45rem;
+}
+
+.height-600 {
+    height: 600px;
+    height: 60rem;
+}
+
+#cover {
+    display: none;
+}
+
+html.cover {
+    &.index {
+        #study {
+            background: #fff;
+            border-radius: .4rem;
+            padding: 2rem;
+            position: relative;
+            margin-bottom: 8rem;
+            padding-bottom: 6rem;
+            article {}
+            footer {
+                margin-left: -2rem;
+            }
+        }
+    }
+    [data-page-category='hero'],
+    [data-page-category='bachelor'],
+    [data-page-category='master'],
+    [data-page-category='flexible'] {
+        #study {
+            background: transparent;
+            padding-bottom: 0rem;
+            article {
+                text-align: center;
+                h1, h2 {
+                    font-weight: 100;
+                    line-height: 2em;
+                    color: $black;
+                }
+                h1 {
+                    font-size: 6rem;
+                }
+                h2 {
+                    font-size: 4rem;
+                }
+            }
+            &.light {
+                h1, h2 {
+                    color: $black;
+                }
+            }
+            &.dark {
+                h1, h2 {
+                    color: $white;
+                }
+            }
+        }
+    }
+    #cover {
+        display: block;
+        width: 100%;
+        //position: relative;
+        //height: 60rem;
+        //position: absolute;
+        //top: 0;
+        overflow: hidden;
+    }
+    //#content{
+    //  //background: #fff;
+    //  //z-index: 9999;
+    //  position: relative;
+    //  &:before{
+    //    position: absolute;
+    //    width: 300%;
+    //    height: 100%;
+    //    padding-bottom: 4rem;
+    //    top: -4rem;
+    //    left: -100%;
+    //    background: #fff;
+    //    z-index: -1;
+    //    display: block;
+    //    content: '';
+    //  }
+    //}
+    .cover-photo {
+        //z-index: -1;
+        display: block;
+        width: 100%;
+        //height: 60rem;
+        position: absolute;
+        //position: fixed;
+        //top: 0;
+        left: 0;
+        //max-height:45rem;
+        //z-index: -10;
+        background-size: cover;
+        background-repeat: no-repeat;
+        //background-attachment: fixed;
+        background-position: 50% 0;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0 auto 1em;
+        //max-height: 600px;
+        //max-width: 600px;
+        &:before {
+            padding-bottom: 56.25%;
+        }
+    }
+    .cover-photo-blur {
+        opacity: 0;
+    }
+    // video styling
+    .cover-video {
+        position: absolute;
+        top: 0;
+        max-width: 100%;
+    }
+    .touch {
+        .cover-video {
+            min-width: 100%;
+        }
+    }
+    .cover-video-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 0;
+        width: 2000px;
+        margin-top: 0;
+    }
+    @include mq($until: small) {
+        [data-page-category='hero'], [data-page-category='bachelor'], [data-page-category='master'], [data-page-category='flexible'] {
+            #study {
+                article {
+                    h1 {
+                        font-size: 2.2rem;
+                    }
+                    h2 {
+                        font-size: 1.8rem;
+                    }
+                }
+            }
+        }
+    }
+    @include mq($from: small, $until: large) {
+        [data-page-category='hero'], [data-page-category='bachelor'], [data-page-category='master'], [data-page-category='flexible'] {
+            #study {
+                article {
+                    padding-top: 0rem;
+                    //text-align: center;
+                    height: auto;
+                    h1 {
+                        font-size: 3.2rem;
+                    }
+                    h2 {
+                        font-size: 2.4rem;
+                    }
+                }
+            }
+        }
+    }
+    @include mq($from: large) {
+        [data-page-category='hero'], [data-page-category='bachelor'], [data-page-category='master'], [data-page-category='flexible'] {
+            #study {
+                article {
+                    padding-top: 12rem;
+                    //text-align: center;
+                    height: 48.6rem;
+                }
+            }
+        }
+    }
+}
+
+.branding {
+    width: 100%;
+    .logo {
+        display: block;
+        margin: 2rem auto;
+        width: 150px;
+        width: 15rem;
+    }
+}
+
+.cover-quote {
+    display: none;
+    position: absolute;
+    top: 10rem;
+    left: 50%;
+    margin-left: -52rem;
+    width: 104rem;
+    font-size: 4rem;
+    color: $white;
+    line-height: 1;
+    font-weight: 100;
+    transition: color .5s;
+    border-radius: $border-radius-standard;
+    padding: 0;
+    padding-bottom: 1rem;
+    a {
+        color: #fff;
+        padding: 1rem 3rem;
+    }
+    p {
+        border-left: none;
+        font-style: normal;
+        line-height: 1.2;
+    }
+    footer {
+        //display: none;
+        text-align: right;
+        width: 100%;
+        padding-right: 3rem;
+        font-size: 2rem;
+    }
+    &:hover {
+        a {
+            color: #000;
+        }
+        color: #000;
+        text-shadow: none;
+        background: fade($white, 80%);
+    }
+    @include mq($until: small) {
+        display: none !important;
+    }
+    @include mq($from: small, $until: large) {
+        top: 10rem;
+        font-size: 2rem;
+        width: 76rem;
+        margin-left: -38rem;
+    }
+}

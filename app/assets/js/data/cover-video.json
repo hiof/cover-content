@@ -1,0 +1,84 @@
+{
+  "cover": {
+    "hero": {
+      "520": {
+        "mp4": "/assets/plugins/cover-content/video/Cover/Cover-S.mp4",
+        "webm": "/assets/plugins/cover-content/video/Cover/Cover-S.webm",
+        "poster": "/assets/plugins/cover-content/video/Cover/Cover-L.jpg",
+        "bg": "/assets/plugins/cover-content/video/cover-content-bg.jpg"
+      },
+      "750": {
+        "mp4": "/assets/plugins/cover-content/video/Cover/Cover-M.mp4",
+        "webm": "/assets/plugins/cover-content/video/Cover/Cover-M.webm",
+        "poster": "/assets/plugins/cover-content/video/Cover/Cover-L.jpg",
+        "bg": "/assets/plugins/cover-content/video/cover-content-bg.jpg"
+      },
+      "1040": {
+        "mp4": "/assets/plugins/cover-content/video/Cover/Cover-L.mp4",
+        "webm": "/assets/plugins/cover-content/video/Cover/Cover-L.webm",
+        "poster": "/assets/plugins/cover-content/video/Cover/Cover-L.jpg",
+        "bg": "/assets/plugins/cover-content/video/cover-content-bg.jpg"
+      }
+    },
+    "bachelor": {
+      "520": {
+        "mp4": "/assets/plugins/cover-content/video/Bachelor/Bachelor-S_v3.mp4",
+        "webm": "/assets/plugins/cover-content/video/Bachelor/Bachelor-S_v3.webm",
+        "poster": "/assets/plugins/cover-content/video/Bachelor/Bachelor-S_v3.jpg",
+        "bg": "/assets/plugins/cover-content/video/cover-content-bg.jpg"
+      },
+      "750": {
+        "mp4": "/assets/plugins/cover-content/video/Bachelor/Bachelor-M_v3.mp4",
+        "webm": "/assets/plugins/cover-content/video/Bachelor/Bachelor-M_v3.webm",
+        "poster": "/assets/plugins/cover-content/video/Bachelor/Bachelor-M_v3.jpg",
+        "bg": "/assets/plugins/cover-content/video/cover-content-bg.jpg"
+      },
+      "1040": {
+        "mp4": "/assets/plugins/cover-content/video/Bachelor/Bachelor-L_v3.mp4",
+        "webm": "/assets/plugins/cover-content/video/Bachelor/Bachelor-L_v3.webm",
+        "poster": "/assets/plugins/cover-content/video/Bachelor/Bachelor-L_v3.jpg",
+        "bg": "/assets/plugins/cover-content/video/cover-content-bg.jpg"
+      }
+    },
+    "master": {
+      "520": {
+        "mp4": "/assets/plugins/cover-content/video/Master/Master-S.mp4",
+        "webm": "/assets/plugins/cover-content/video/Master/Msster-S.webm",
+        "poster": "/assets/plugins/cover-content/video/Master/Master-L.jpg",
+        "bg": "/assets/plugins/cover-content/video/cover-content-bg.jpg"
+      },
+      "750": {
+        "mp4": "/assets/plugins/cover-content/video/Master/Master-M.mp4",
+        "webm": "/assets/plugins/cover-content/video/Master/Master-M.webm",
+        "poster": "/assets/plugins/cover-content/video/Master/Master-L.jpg",
+        "bg": "/assets/plugins/cover-content/video/cover-content-bg.jpg"
+      },
+      "1040": {
+        "mp4": "/assets/plugins/cover-content/video/Master/Master-L.mp4",
+        "webm": "/assets/plugins/cover-content/video/Master/Master-L.webm",
+        "poster": "/assets/plugins/cover-content/video/Master/Master-L.jpg",
+        "bg": "/assets/plugins/cover-content/video/Master/cover-content-bg.jpg"
+      }
+    },
+    "flexible": {
+      "520": {
+        "mp4": "/assets/plugins/cover-content/video/Fleksible-Studier/Fleksible-Studier-S_v2.mp4",
+        "webm": "/assets/plugins/cover-content/video/Fleksible-Studier/Fleksible-Studier-S_v2.webm",
+        "poster": "/assets/plugins/cover-content/video/Fleksible-Studier/Fleksible-Studier-S_v2.jpg",
+        "bg": "/assets/plugins/cover-content/video/cover-content-bg.jpg"
+      },
+      "750": {
+        "mp4": "/assets/plugins/cover-content/video/Fleksible-Studier/Fleksible-Studier-M_v2.mp4",
+        "webm": "/assets/plugins/cover-content/video/Fleksible-Studier/Fleksible-Studier-M_v2.webm",
+        "poster": "/assets/plugins/cover-content/video/Fleksible-Studier/Fleksible-Studier-M_v2.jpg",
+        "bg": "/assets/plugins/cover-content/video/cover-content-bg.jpg"
+      },
+      "1040": {
+        "mp4": "/assets/plugins/cover-content/video/Fleksible-Studier/Fleksible-Studier-L_v2.mp4",
+        "webm": "/assets/plugins/cover-content/video/Fleksible-Studier/Fleksible-Studier-L_v2.webm",
+        "poster": "/assets/plugins/cover-content/video/Fleksible-Studier/Fleksible-Studier-L_v2.jpg",
+        "bg": "/assets/plugins/cover-content/video/cover-content-bg.jpg"
+      }
+    }
+  }
+}

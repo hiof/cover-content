@@ -127,7 +127,7 @@ module.exports = function(grunt) {
                 mangle: false,
                 //compress: true,
                 preserveComments: false,
-                banner: '/*! <%= pkg.name %> v<%= pkg.version %> by <%= pkg.author %>, released: <%= moment().format("hh:mm DD-MM-YYYY") %> */'
+                banner: '/*! <%= pkg.name %> v<%= pkg.version %> by <%= pkg.author %>, released: <%= moment().format("HH:mm DD-MM-YYYY") %> */'
             },
             main: {
                 files: {

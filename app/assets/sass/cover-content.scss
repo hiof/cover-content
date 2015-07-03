@@ -253,3 +253,33 @@ html.cover {
         margin-left: -38rem;
     }
 }
+
+
+
+.cover {
+    @include mq($from: small, $until: large) {
+        [data-page-category='hero'], [data-page-category='bachelor'], [data-page-category='master'], [data-page-category='flexible'] {
+            #study {
+                margin-top: -32rem;
+            }
+        }
+        #study {
+            .lo-one-third {
+                width: 48%;
+                float: left;
+                //background: pink;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    @include mq($from: large) {
+        #study {
+            margin-top: -50rem;
+        }
+    }
+}
+
+
+

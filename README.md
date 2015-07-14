@@ -44,8 +44,13 @@ $ bower install
 
 ## Releases
 
+
+- [x] v1.0.0
+  - [x] Initial cover-content
+
 [Github releases](https://github.com/hiof/cover-content/releases)
 
 ### Roadmap
 
-v1.0.0 - Initial cover-content
+- [ ] v1.0.1
+  - [ ] More colors

@@ -82,10 +82,11 @@
             if (pageType === "homepage") {
                 //console.log('pageType was homepage, default to "page"');
                 pageType = "index";
-                coverGenerateMarkupBgcolor();
+                //coverGenerateMarkupBgcolor();
             } else {
-                Hiof.coverGetImage(pageType);
+
             }
+            Hiof.coverGetImage(pageType);
 
 
         }

@@ -574,6 +574,49 @@
       "0": {
         "400": {
           "imgHeight": "150",
+          "normal": "/assets/plugins/cover-content/images/it/digitale-medier-1/cover-photo-1-400X200.jpg",
+          "blurred": "/assets/plugins/cover-content/images/it/digitale-medier-1/cover-photo-1-400X200-blurred.jpg"
+        },
+        "500": {
+          "imgHeight": "150",
+          "normal": "/assets/plugins/cover-content/images/it/digitale-medier-1/cover-photo-1-500X200.jpg",
+          "blurred": "/assets/plugins/cover-content/images/it/digitale-medier-1/cover-photo-1-500X200-blurred.jpg"
+        },
+        "600": {
+          "imgHeight": "300",
+          "normal": "/assets/plugins/cover-content/images/it/digitale-medier-1/cover-photo-1-600X300.jpg",
+          "blurred": "/assets/plugins/cover-content/images/it/digitale-medier-1/cover-photo-1-600X300-blurred.jpg"
+        },
+        "800": {
+          "imgHeight": "300",
+          "normal": "/assets/plugins/cover-content/images/it/digitale-medier-1/cover-photo-1-800X300.jpg",
+          "blurred": "/assets/plugins/cover-content/images/it/digitale-medier-1/cover-photo-1-800X300-blurred.jpg"
+        },
+        "1000": {
+          "imgHeight": "450",
+          "normal": "/assets/plugins/cover-content/images/it/digitale-medier-1/cover-photo-1-1000X450.jpg",
+          "blurred": "/assets/plugins/cover-content/images/it/digitale-medier-1/cover-photo-1-1000X450-blurred.jpg"
+        },
+        "1200": {
+          "imgHeight": "450",
+          "normal": "/assets/plugins/cover-content/images/it/digitale-medier-1/cover-photo-1-1200X450.jpg",
+          "blurred": "/assets/plugins/cover-content/images/it/digitale-medier-1/cover-photo-1-1200X450-blurred.jpg"
+        },
+        "1600": {
+          "imgHeight": "450",
+          "normal": "/assets/plugins/cover-content/images/it/digitale-medier-1/cover-photo-1-1600X450.jpg",
+          "blurred": "/assets/plugins/cover-content/images/it/digitale-medier-1/cover-photo-1-1600X450-blurred.jpg"
+        },
+        "2000": {
+          "imgHeight": "450",
+          "normal": "/assets/plugins/cover-content/images/it/digitale-medier-1/cover-photo-1-2000X450.jpg",
+          "blurred": "/assets/plugins/cover-content/images/it/digitale-medier-1/cover-photo-1-2000X450-blurred.jpg"
+        }
+
+      },
+      "1": {
+        "400": {
+          "imgHeight": "150",
           "normal": "/assets/plugins/cover-content/images/it/maker-space-1/cover-photo-1-400X200.jpg",
           "blurred": "/assets/plugins/cover-content/images/it/maker-space-1/cover-photo-1-400X200-blurred.jpg"
         },

@@ -136,7 +136,7 @@
 
       },
 
-      "0": {
+      "1": {
         "400": {
           "imgHeight": "150",
           "normal": "/assets/plugins/cover-content/images/page/page-library-3/cover-photo-1-400X200.jpg",
@@ -179,7 +179,7 @@
         }
 
       },
-      "1": {
+      "2": {
         "400": {
           "imgHeight": "150",
           "normal": "/assets/plugins/cover-content/images/page/campus-fredrikstad-3/cover-photo-1-400X200.jpg",
@@ -222,7 +222,7 @@
         }
 
       },
-      "2": {
+      "3": {
         "400": {
           "imgHeight": "150",
           "normal": "/assets/plugins/cover-content/images/page/campus-fredrikstad-4/cover-photo-1-400X200.jpg",
@@ -264,7 +264,7 @@
           "blurred": "/assets/plugins/cover-content/images/page/campus-fredrikstad-4/cover-photo-1-2000X450-blurred.jpg"
         }
       },
-      "3": {
+      "4": {
         "400": {
           "imgHeight": "150",
           "normal": "/assets/plugins/cover-content/images/page/campus-halden-5/cover-photo-1-400X200.jpg",
@@ -306,7 +306,7 @@
           "blurred": "/assets/plugins/cover-content/images/page/campus-halden-5/cover-photo-1-2000X450-blurred.jpg"
         }
       },
-      "4": {
+      "5": {
         "400": {
           "imgHeight": "150",
           "normal": "/assets/plugins/cover-content/images/page/campus-halden-6/cover-photo-1-400X200.jpg",

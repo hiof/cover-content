@@ -94,7 +94,7 @@
     };
     Hiof.coverGetVideo = function(pageType) {
         //console.log("Cover video initiated");
-        $.getJSON("/assets/js/data/cover-video.json", function(data) {
+        $.getJSON("/assets/plugins/cover-content/js/data/cover-video.json", function(data) {
             // Get data from a random entry based on the pageType
             //console.log(data.cover[pageType]);
             //console.log(data);
@@ -111,7 +111,7 @@
     Hiof.coverGetImage = function(pageType) {
 
 
-        $.getJSON("/assets/js/data/cover-photo.json", function(data) {
+        $.getJSON("/assets/plugins/cover-content/js/data/cover-photo.json", function(data) {
             // Get data from a random entry based on the pageType
             //console.log(data.cover[pageType]);
 

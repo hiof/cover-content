@@ -47,10 +47,17 @@ $ bower install
 
 - [x] v1.0.0
   - [x] Initial cover-content
+- [x] v1.1.0
+  - [x] Added and changed photo array
 
 [Github releases](https://github.com/hiof/cover-content/releases)
 
 ### Roadmap
 
-- [ ] v1.0.1
+- [ ] v1.2.0
+  - [ ] Inline JSON
+- [ ] v1.3.0
   - [ ] More colors
+  - [ ] More pictures
+  - [ ] Remove old pictures
+

@@ -80,6 +80,13 @@ module.exports = function(grunt) {
                 dest: 'build/templates/',
                 filter: 'isFile'
             },
+            jsdata: {
+                expand: true,
+                cwd: 'app/assets/js/data/',
+                src: '**',
+                dest: 'build/js/data/',
+                filter: 'isFile'
+            },
             dist: {
                 expand: true,
                 cwd: 'build/',
@@ -247,7 +254,7 @@ module.exports = function(grunt) {
 
     });
 
-    grunt.registerTask('subtaskJs', ['jshint', 'concat:scripts', 'uglify']);
+    grunt.registerTask('subtaskJs', ['jshint', 'concat:scripts', 'uglify', 'copy:jsdata']);
     grunt.registerTask('subtaskCss', ['sass', 'autoprefixer', 'cssmin']);
     grunt.registerTask('subtaskImages', ['copy:images']);
     grunt.registerTask('subtaskVideo', ['copy:video']);

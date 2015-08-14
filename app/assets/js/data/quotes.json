@@ -1,0 +1,51 @@
+{
+    "quotes": [{
+        "id": 1,
+        "text": "Det er fantastisk å være student ved Høgskolen i Østfold. Jeg møter stadig nye mennesker, samtidig som det er et godt samhold både i klassen og generelt. Gode forelesere gir stort utbytte og det er positivt.",
+        "cite": "Johanne Gjerdsbakk, student ved bachelorstudium i Arbeids- og velferdsfag",
+        "url": "http://www.hiof.no/aktuelt?displayitem=3917&module=news&newscat=aktuelt",
+        "urlCourse": "",
+        "category": "",
+        "type": ""
+    }, {
+        "id": 2,
+        "text": "Jeg hadde egentlig ikke vurdert en master før fordi det ikke var noen slik mulighet. Men så fikk jeg høre om dette programmet.",
+        "cite": "Maret Tamme, masterstudent ved masterstudium i scenografi",
+        "url": "http://www.hiof.no/aktuelt?displayitem=3949&module=news&newscat=aktuelt",
+        "urlCourse": "",
+        "category": "",
+        "type": ""
+    }, {
+        "id": 3,
+        "text": "På HiØ får man tilgjengelige forelesere, toveiskommunikasjon i undervisningen, mindre og sosiale klasser, ikke minst enormt gode studieveiledere. Den nærheten og tilgjengeligheten er uvurderlig.",
+        "cite": "Zorav Darisiro, student ved bachelorstudium i samfunn, språk og kultur",
+        "url": "http://www.hiof.no/aktuelt/nyheter/?&displayitem=3916&module=news",
+        "urlCourse": "",
+        "category": "",
+        "type": ""
+    }, {
+        "id": 4,
+        "text": "Å være aktiv student samtidig som man er i jobb, krever struktur og planlegging. Samtidig er det absolutt verdt det, fordi dette studiet er så interessant.",
+        "cite": "Studenter ved masterstudium i barnehagepedagogikk og småbarnsvitenskap (0-3 år)",
+        "url": "http://www.hiof.no/aktuelt/nyheter/?&displayitem=3943&module=news",
+        "urlCourse": "",
+        "category": "",
+        "type": ""
+    }, {
+        "id": 5,
+        "text": "Studiet har gitt meg mye på mange områder, både privat og profesjonelt. Jeg har blitt flinkere til å se muligheter og ta initiativ. Studiet har uten tvil gjort meg faglig trygg og gitt meg mer selvtillit",
+        "cite": "Camilla Simonsen, Design Manager, Snø Designstudio. Tidligere student ved Innovasjon og prosjektledelse",
+        "url": "http://www.hiof.no/aktuelt/nyheter/?&displayitem=3918&module=news",
+        "urlCourse": "",
+        "category": "",
+        "type": ""
+    }, {
+        "id": 6,
+        "text": "Hensikten med HiØ Makerspace er å tilby studenter et fysisk rom og et levende miljø der målet er å lære noe nytt ved å oppmuntre til nysgjerrighet og skaperglede",
+        "cite": "FoU-leder Harald Holone ved avdeling for informasjonsteknologi",
+        "url": "http://www.hiof.no/aktuelt/nyhetsarkiv/arkiv_-alle-nyheter/?&displayitem=3888&module=news",
+        "urlCourse": "",
+        "category": "",
+        "type": ""
+    }]
+}

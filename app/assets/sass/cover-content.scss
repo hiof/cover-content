@@ -242,7 +242,7 @@ html.cover {
         }
         color: #000;
         text-shadow: none;
-        background: fade($white, 80%);
+        background: transparentize($white, .2);
     }
     @include mq($until: small) {
         display: none !important;

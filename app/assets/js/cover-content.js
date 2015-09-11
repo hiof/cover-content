@@ -11,10 +11,17 @@
 
 
         if ($('#study-catalog-cover-id').length) {
-            var facultyId = $('#study-catalog-cover-id').attr('data-study-catalog-cover-id');
+            var facultyId = $('#study-catalog-cover-id').attr('data-study-catalog-cover-id'),
+                programId = $('#study-catalog-cover-id').attr('data-study-catalog-program-id');
+
             if (facultyId === '22440') {
                 // HS
-                pageType = 'hs';
+                // If vold i nære relasjoner, use only the blurred set of images
+                if (programId === '2329') {
+                    pageType = 'hs-voldinaererelasjoner';
+                } else {
+                    pageType = 'hs';
+                }
             } else if (facultyId === '22450') {
                 // IR
                 pageType = 'ir';

@@ -1,7 +1,7 @@
 (function(Hiof, undefined) {
 
 
-    Hiof.coverAddCoverContentToPage = function() {
+    addCoverContentToPage = function() {
 
 
 
@@ -9,7 +9,7 @@
             windowWidth = $(window).width(),
             entry;
 
-
+        // If the page is in the study cataloge
         if ($('#study-catalog-cover-id').length) {
             var facultyId = $('#study-catalog-cover-id').attr('data-study-catalog-cover-id'),
                 programId = $('#study-catalog-cover-id').attr('data-study-catalog-program-id');
@@ -48,6 +48,9 @@
         } else {
             pageType = $("#main").data("page-category");
         }
+
+
+
         if (pageType === 'hs-index') {
             pageType = "index";
         } else if (pageType === 'ir-index') {
@@ -73,33 +76,54 @@
             pageType = "page";
         }
 
+
+
+
+
         if ((windowWidth <= 770) && (pageType === "homepage")) {
             // Add HiØ logo as the cover photo on Index
-            Hiof.coverGenerateMarkupBranding();
+            generateMarkupBranding();
             if (windowWidth <= 420 && ((pageType === "hero") || (pageType === "bachelor") || (pageType === "master") || (pageType === "flexible"))) {
-                Hiof.coverGenerateMarkupVideoMobile();
+                generateMarkupVideoMobile();
             }
         } else if ((windowWidth <= 420 && ((pageType === "homepage") || (pageType === "hero") || (pageType === "bachelor") || (pageType === "master") || (pageType === "flexible")))) {
             // Dont add a cover-photo on the smallest screens
-            Hiof.coverGenerateMarkupVideoMobile(pageType);
+            generateMarkupVideoMobile(pageType);
         } else if ((pageType === "hero") || (pageType === "bachelor") || (pageType === "master") || (pageType === "flexible")) {
-            Hiof.coverGetVideo(pageType);
+            getVideo(pageType);
         } else {
             // Add cover photo
             if (pageType === "homepage") {
                 //console.log('pageType was homepage, default to "page"');
                 pageType = "index";
-                //coverGenerateMarkupBgcolor();
-            } else {
-
+                //generateMarkupBgcolor();
             }
-            Hiof.coverGetImage(pageType);
-
+            if ((pageType === "research") || (pageType === "about")) {
+                addGfx(pageType);
+            } else {
+                getImage(pageType);
+            }
 
         }
 
     };
-    Hiof.coverGetVideo = function(pageType) {
+    addGfx = function(pageType) {
+        var coverWrapper = document.createElement('div'),
+            gfxWrapper = $(coverWrapper).clone(),
+            windowWidth = $(window).width(),
+            windowHeight = $(window).height(),
+            gfxClass = 'cover-gfx-' + pageType;
+
+        $(coverWrapper).addClass("cover height-100 margin-bottom-30").attr("id", "cover");
+
+        $(gfxWrapper).css('background-image', 'url(/assets/plugins/cover-content/images/gfx/grid.svg)').addClass('cover-gfx height-100').addClass(gfxClass);
+
+        $(coverWrapper).append(gfxWrapper);
+
+        $('#main').prepend(coverWrapper);
+
+    };
+    getVideo = function(pageType) {
         //console.log("Cover video initiated");
         $.getJSON("/assets/plugins/cover-content/js/data/cover-video.json", function(data) {
             // Get data from a random entry based on the pageType
@@ -111,11 +135,11 @@
             //entry = randomEntry;
 
             // Callback to generate the content
-            Hiof.coverGenerateMarkupVideo(entry);
+            generateMarkupVideo(entry);
         });
-        //Hiof.coverGenerateMarkupVideo();
+        //generateMarkupVideo();
     };
-    Hiof.coverGetImage = function(pageType) {
+    getImage = function(pageType) {
 
 
         $.getJSON("/assets/plugins/cover-content/js/data/cover-photo.json", function(data) {
@@ -130,12 +154,12 @@
             //entry = randomEntry;
 
             // Callback to generate the content
-            Hiof.coverGenerateMarkupPicture(randomEntry);
+            generateMarkupPicture(randomEntry);
         });
 
 
     };
-    Hiof.coverGenerateMarkupVideoMobile = function(pageType) {
+    generateMarkupVideoMobile = function(pageType) {
         var vimeoElement = document.createElement('iframe');
 
 
@@ -165,7 +189,7 @@
         $('#study h1').hide();
         $('#main').prepend(vimeoElement);
     };
-    coverGenerateMarkupBgcolor = function() {
+    generateMarkupBgcolor = function() {
 
         var coverWrapper = document.createElement('div'),
             colorWrapper = $(coverWrapper).clone(),
@@ -181,7 +205,7 @@
 
         $('#main').prepend(coverWrapper);
     };
-    Hiof.coverGenerateMarkupBranding = function() {
+    generateMarkupBranding = function() {
         var brandingWrapper = document.createElement('div'),
             lang = Hiof.languageCheck(),
             logo;
@@ -195,7 +219,7 @@
     };
 
 
-    Hiof.coverGenerateMarkupVideo = function(data) {
+    generateMarkupVideo = function(data) {
         //console.log("Cover video markup is comming..");
         //if (true) {};
 
@@ -326,7 +350,7 @@
 
     };
 
-    Hiof.coverGenerateMarkupPicture = function(data) {
+    generateMarkupPicture = function(data) {
 
 
         var coverWrapper = document.createElement('div'),
@@ -425,7 +449,7 @@
 
 
         // Cover content initiater
-        Hiof.coverAddCoverContentToPage();
+        addCoverContentToPage();
 
 
         $(window).resize(function() {
@@ -460,16 +484,6 @@
 
 
 
-
-
-    $(function() {
-
-
-
-
-
-
-    });
 
     // Expose functions to the window
     window.Hiof.catalogQuotes = quotes;

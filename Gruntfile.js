@@ -3,6 +3,11 @@ module.exports = function(grunt) {
     require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
     require('time-grunt')(grunt);
 
+    createSitemapArray = function(){
+        //$.Get
+        //http://www.hiof.no/test-omrade/sitemap?view=sitetree
+    };
+
     // Initiate grunt tasks
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -123,7 +128,7 @@ module.exports = function(grunt) {
         concat: {
             scripts: {
                 src: [
-                    //'build/templates.js',
+                    //'vendor/imgCoverEffect/imgCoverEffect.js',
                     'app/assets/js/cover-content.js'
                 ],
                 dest: 'build/<%= pkg.name %>.v<%= pkg.version %>.min.js'

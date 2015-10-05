@@ -134,8 +134,34 @@ html.cover {
             //margin: 0 auto;
             //margin-left: -50%;
         }
+        rect{
+            width: 200%;
+            height: 100px;
+        }
     }
 
+    &.lt-ie10{
+        .cover-gfx{
+            svg{
+                left: 0;
+            }
+            //rect{
+            //    width: 100%;
+            //    height: 100px;
+            //}
+        }
+    }
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        .cover-gfx{
+            svg{
+                left: 0;
+            }
+            rect{
+                //width: 100%;
+                height: 100%;
+            }
+        }
+    }
     .cover-gfx-research{
         svg{
             background:#347E84;
@@ -237,6 +263,9 @@ html.cover {
         }
     }
 }
+
+
+
 
 .branding {
     width: 100%;

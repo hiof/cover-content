@@ -1,0 +1,15 @@
+<svg version="1.1" id="gfx-grid" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 6660 100" enable-background="new 0 0 6660 100" preserveAspectRatio="xMinYMax slice">
+    <defs>
+        <pattern id="basicPattern" x="0" y="0" width="55.5" height="100" patternUnits="userSpaceOnUse">
+            <path id="gfx-grid-shape" fill="#D8D9D8
+" d="M57.1,3.1V0.9l-1.9-1l-1.8,1v1.9l-24.2,14l-1.7-1l-1.6,1L1.7,2.8V0.9l-1.8-1l-1.9,1v2.2
+  l1.6,0.8v28L-2,32.9V35l1.9,1.1l1.5-0.9l24.3,14.1v1.3L1.4,64.6l-1.5-0.8l-1.9,1V67l1.6,0.8v28L-2,96.8v2.1l1.9,1.1l1.8-1.1v-1.8
+  l24.3-14l1.6,0.9l1.6-0.9l24.1,13.9v1.8l1.9,1.1l1.9-1.1v-2.1l-1.7-1V67.9l1.7-0.9v-2.2l-1.9-1l-1.6,0.9l-24.2-14v-1.5l24.3-14
+  l1.5,0.9l1.9-1.1v-2.1L55.5,32v-28L57.1,3.1z M53.4,32.9v1.8L29,48.7L27.8,48v-28l1.6-0.9v-1.8l24.2-14L55,4v27.9L53.4,32.9z
+   M54.9,67.8v28l-1.4,0.8l-24.1-14v-1.8l-1.6-1V51.9l1.3-0.8l24.3,14V67L54.9,67.8z M25.7,80.8v1.8l-24.2,14l-1.4-0.8V67.9L1.7,67
+  v-1.9L26,51.2l1.3,0.8v27.9L25.7,80.8z M0.1,31.9V4l1.4-0.8l24.2,14V19l1.6,1v27.9L26,48.7l-24.3-14v-1.8L0.1,31.9z" />
+        </pattern>
+    </defs>
+    <rect x="0" y="0" width="100%" height="100%" stroke-width="0" fill="url(#basicPattern)" />
+
+</svg>

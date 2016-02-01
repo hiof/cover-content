@@ -58,6 +58,7 @@ html.cover {
     [data-page-category='flexible'] {
         #study {
             background: transparent;
+            transition: background-color 0.5s ease;
             padding-bottom: 0rem;
             article {
                 text-align: center;
@@ -82,6 +83,9 @@ html.cover {
                 h1, h2 {
                     color: $white;
                 }
+            }
+            &:hover{
+              background-color: rgba(255, 255, 255, .9);
             }
         }
     }
@@ -253,11 +257,16 @@ html.cover {
     }
     @include mq($from: large) {
         [data-page-category='hero'], [data-page-category='bachelor'], [data-page-category='master'], [data-page-category='flexible'] {
+          .cover-video{
+            top: 5.4rem;
+            border-top-left-radius: .4rem;
+            border-top-right-radius: .4rem;
+          }
             #study {
                 article {
                     padding-top: 12rem;
                     //text-align: center;
-                    height: 48.6rem;
+                    height: 50.6rem;
                 }
             }
         }
@@ -353,6 +362,3 @@ html.cover {
         }
     }
 }
-
-
-

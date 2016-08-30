@@ -106,12 +106,12 @@ module.exports = function(grunt) {
             build: ['build/**/*']
         },
 
-        jshint: {
-            options: {
-                ignores: ['app/assets/js/templates/templates.js']
-            },
-            files: ['app/assets/js/**/*.js', 'Gruntfile.js', 'bower.json', 'package.json']
-        },
+        //jshint: {
+        //    options: {
+        //        ignores: ['app/assets/js/templates/templates.js']
+        //    },
+        //    files: ['app/assets/js/**/*.js', 'Gruntfile.js', 'bower.json', 'package.json']
+        //},
         //handlebars: {
         //    options: {
         //        namespace: 'Hiof.Templates',
@@ -259,7 +259,7 @@ module.exports = function(grunt) {
 
     });
 
-    grunt.registerTask('subtaskJs', ['jshint', 'concat:scripts', 'uglify', 'copy:jsdata']);
+    grunt.registerTask('subtaskJs', [ 'concat:scripts', 'uglify', 'copy:jsdata']);
     grunt.registerTask('subtaskCss', ['sass', 'autoprefixer', 'cssmin']);
     grunt.registerTask('subtaskImages', ['copy:images']);
     grunt.registerTask('subtaskVideo', ['copy:video']);

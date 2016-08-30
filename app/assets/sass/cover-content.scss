@@ -225,6 +225,12 @@ html.cover {
         margin-top: 0;
     }
     @include mq($until: small) {
+          .cover-gfx{
+
+              svg{
+                  position: relative;
+                }
+              }
         [data-page-category='hero'], [data-page-category='bachelor'], [data-page-category='master'], [data-page-category='flexible'] {
             #study {
                 article {
@@ -239,6 +245,14 @@ html.cover {
         }
     }
     @include mq($from: small, $until: large) {
+
+      .cover-gfx{
+
+          svg{
+              position: relative;
+            }
+          }
+
         [data-page-category='hero'], [data-page-category='bachelor'], [data-page-category='master'], [data-page-category='flexible'] {
             #study {
                 article {

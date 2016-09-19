@@ -7,372 +7,479 @@
 //$mq-large: 900px;
 // Universal
 .height-100 {
-    height: 100px;
-    height: 10rem;
+  height: 100px;
+  height: 10rem;
 }
 .height-150 {
-    height: 150px;
-    height: 15rem;
+  height: 150px;
+  height: 15rem;
 }
 
 .height-300 {
-    height: 300px;
-    height: 30rem;
+  height: 300px;
+  height: 30rem;
 }
 
 .height-450 {
-    height: 450px;
-    height: 45rem;
+  height: 350px;
+  height: 35rem;
 }
 
 .height-600 {
-    height: 600px;
-    height: 60rem;
+  height: 400px;
+  height: 40rem;
 }
 
 #cover {
-    display: none;
+  display: none;
 }
 .margin-bottom-30{
-    margin-bottom: 30px;
-    margin-bottom: 3rem;
+  margin-bottom: 30px;
+  margin-bottom: 3rem;
 }
 html.cover {
-    &.index {
-        #study {
-            background: #fff;
-            border-radius: .4rem;
-            padding: 2rem;
-            position: relative;
-            margin-bottom: 8rem;
-            padding-bottom: 6rem;
-            article {}
-            footer {
-                margin-left: -2rem;
-            }
-        }
-    }
-    [data-page-category='hero'],
-    [data-page-category='bachelor'],
-    [data-page-category='master'],
-    [data-page-category='flexible'] {
-        #study {
-            background: transparent;
-            transition: background-color 0.5s ease;
-            padding-bottom: 0rem;
-            article {
-                text-align: center;
-                h1, h2 {
-                    font-weight: 100;
-                    line-height: 2em;
-                    color: $black;
-                }
-                h1 {
-                    font-size: 6rem;
-                }
-                h2 {
-                    font-size: 4rem;
-                }
-            }
-            &.light {
-                h1, h2 {
-                    color: $black;
-                }
-            }
-            &.dark {
-                h1, h2 {
-                    color: $white;
-                }
-            }
-            &:hover{
-              background-color: rgba(255, 255, 255, .9);
-            }
-        }
-    }
-    #cover {
-        display: block;
+  &.index {
+    #study {
+      background: #fff;
+      border-radius: .4rem;
+      padding: 2rem;
+      position: relative;
+      margin-bottom: 0rem;
+      padding-bottom: 5rem;
+      .lo-full {
+        margin-bottom: 0;
+      }
+      .lo-one-third{
+        padding: 0;
+      }
+      > header {
         width: 100%;
-        //position: relative;
-        //height: 60rem;
-        //position: absolute;
-        //top: 0;
-        overflow: hidden;
-    }
-    //#content{
-    //  //background: #fff;
-    //  //z-index: 9999;
-    //  position: relative;
-    //  &:before{
-    //    position: absolute;
-    //    width: 300%;
-    //    height: 100%;
-    //    padding-bottom: 4rem;
-    //    top: -4rem;
-    //    left: -100%;
-    //    background: #fff;
-    //    z-index: -1;
-    //    display: block;
-    //    content: '';
-    //  }
-    //}
-    .cover-gfx{
-        //background-repeat: repeat-x;
+        float: left;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid #eee;
+      }
+      article {
+        h2,h3 {
+          font-size: 2.2rem;
+          font-weight: 300;
+          margin-bottom: 1rem;
+        }
+        p {
+          margin-bottom: 0;
+        }
+        img {
+          width: 100%;
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+        .btn{
+          width: 100%;
+        }
+      }
+      footer {
+        position: absolute;
+        bottom: 0;
+        background: $color-primary-action;
         width: 100%;
-        height: 100px;
-        height: 10rem;
-        //position:relative;
-        //position: absolute;
-        //top: 60px;
-        //left: 0;
-        //background-position: top left;
-        //&:before {
-        //    padding-bottom: 56.25%;
-        //}
-        //overflow: hidden;
-        svg{
+        margin-left: -2rem;
+        border-bottom-left-radius: .4rem;
+        border-bottom-right-radius: .4rem;
+        ul {
+          margin-bottom: 0;
+          margin-left: 3rem;
+        }
+        li {
+          list-style: none;
+          display: inline-block;
+          margin: 0;
+          //margin-right: 2rem;
+          position: relative;
+          a {
+            line-height: 4.4rem;
+            color: #fff;
+            display: block;
+            border-radius: 0;
+            &:hover {
+              background: lighten($color-primary-action, 10%);
+              //color: $color-primary-action
+              text-decoration: none;
+              &:after {
+                border-left-color: lighten($color-primary-action, 10%);
+              }
+            }
+          }
+          ul {
+            display: none;
             position: absolute;
-            top: 60px;
-            left: -50%;
-            height: 100px;
-            height: 10rem;
-            //margin: 0 auto;
-            //margin-left: -50%;
-        }
-        rect{
-            width: 200%;
-            height: 100px;
-        }
-    }
-
-    &.lt-ie10{
-        .cover-gfx{
-            svg{
-                left: 0;
-            }
-            //rect{
-            //    width: 100%;
-            //    height: 100px;
-            //}
-        }
-    }
-    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-        .cover-gfx{
-            svg{
-                left: 0;
-            }
-            rect{
-                //width: 100%;
-                height: 100%;
-            }
-        }
-    }
-    .cover-gfx-research{
-        svg{
-            background:#347E84;
-        }
-        path{
-            fill: #fff;
-        }
-    }
-    .cover-gfx-about{
-        path{
-            fill: #347E84;
-        }
-    }
-    .cover-gfx-admission{
-
-    }
-    .cover-gfx-studyprogram{
-
-    }
-    .cover-gfx-coursedescription{
-
-    }
-    .cover-photo {
-        display: block;
-        width: 100%;
-        position: absolute;
-        left: 0;
-        background-position: 50% 0;
-        background-position: 50%;
-        background-repeat: no-repeat;
-        background-size: cover;
-        margin: 0 auto 1em;
-        &:before {
-            padding-bottom: 56.25%;
-        }
-    }
-    .cover-photo-blur {
-        opacity: 0;
-    }
-    // video styling
-    .cover-video {
-        position: absolute;
-        top: 0;
-        max-width: 100%;
-    }
-    .touch {
-        .cover-video {
-            min-width: 100%;
-        }
-    }
-    .cover-video-bg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        border-radius: 0;
-        width: 2000px;
-        margin-top: 0;
-    }
-    @include mq($until: small) {
-          .cover-gfx{
-
-              svg{
-                  position: relative;
+            width: 40rem;
+            left: 0;
+            z-index: 999;
+            padding: 0;
+            top: 100%;
+            margin: 0;
+            border-top: .2rem solid darken($color-primary-action, 10%);
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            li {
+              display: block;
+              a {
+                background: $color-primary-action;
+                display: block;
+                padding: 0 2rem;
+                &:hover {
+                  background: lighten($color-primary-action, 10%);
                 }
               }
-        [data-page-category='hero'], [data-page-category='bachelor'], [data-page-category='master'], [data-page-category='flexible'] {
-            #study {
-                article {
-                    h1 {
-                        font-size: 2.2rem;
-                    }
-                    h2 {
-                        font-size: 1.8rem;
-                    }
+              &:last-child {
+                a {
+                  border-bottom-left-radius: .4rem;
+                  border-bottom-right-radius: .4rem;
                 }
-            }
-        }
-    }
-    @include mq($from: small, $until: large) {
-
-      .cover-gfx{
-
-          svg{
-              position: relative;
+              }
             }
           }
-
-        [data-page-category='hero'], [data-page-category='bachelor'], [data-page-category='master'], [data-page-category='flexible'] {
-            #study {
-                article {
-                    padding-top: 0rem;
-                    //text-align: center;
-                    height: auto;
-                    h1 {
-                        font-size: 3.2rem;
-                    }
-                    h2 {
-                        font-size: 2.4rem;
-                    }
-                }
+          &:hover {
+            ul {
+              display: block;
             }
-        }
-    }
-    @include mq($from: large) {
-        [data-page-category='hero'], [data-page-category='bachelor'], [data-page-category='master'], [data-page-category='flexible'] {
-          .cover-video{
-            top: 5.4rem;
-            border-top-left-radius: .4rem;
-            border-top-right-radius: .4rem;
           }
-            #study {
-                article {
-                    padding-top: 12rem;
-                    //text-align: center;
-                    height: 50.6rem;
-                }
-            }
         }
+        .form-inline {
+          width: 200px;
+          margin-bottom: 0;
+          //margin-top: 8px;
+        }
+        .btn-link {
+          &:before, &:after {
+            top: 1.8rem;
+          }
+        }
+      }
     }
+  }
+  &.lang-en.index {
+    // Override to fix a spacing issue when the index hero-layout is combined
+    // with normal page content
+    #study {
+      padding-bottom: 0;
+    }
+    #content {
+      margin-top: 0;
+    }
+  }
+  // Note: This is styling for videoes
+  //---------------------------------------
+  //[data-page-category='hero'],
+  //[data-page-category='bachelor'],
+  //[data-page-category='master'],
+  //[data-page-category='flexible'] {
+  //    #study {
+  //        background: transparent;
+  //        transition: background-color 0.5s ease;
+  //        padding-bottom: 0rem;
+  //        article {
+  //            text-align: center;
+  //            h1, h2 {
+  //                font-weight: 100;
+  //                line-height: 2em;
+  //                color: $black;
+  //            }
+  //            h1 {
+  //                font-size: 6rem;
+  //            }
+  //            h2 {
+  //                font-size: 4rem;
+  //            }
+  //        }
+  //        &.light {
+  //            h1, h2 {
+  //                color: $black;
+  //            }
+  //        }
+  //        &.dark {
+  //            h1, h2 {
+  //                color: $white;
+  //            }
+  //        }
+  //        &:hover{
+  //          background-color: rgba(255, 255, 255, .9);
+  //        }
+  //    }
+  //}
+  #cover {
+    display: block;
+    width: 100%;
+    //position: relative;
+    //height: 60rem;
+    //position: absolute;
+    //top: 0;
+    overflow: hidden;
+  }
+
+  .cover-gfx{
+    width: 100%;
+    height: 100px;
+    height: 10rem;
+    svg{
+      position: absolute;
+      top: 60px;
+      left: -50%;
+      height: 100px;
+      height: 10rem;
+      //margin: 0 auto;
+      //margin-left: -50%;
+    }
+    rect{
+      width: 200%;
+      height: 100px;
+    }
+  }
+
+  &.lt-ie10{
+    .cover-gfx{
+      svg{
+        left: 0;
+      }
+      //rect{
+      //    width: 100%;
+      //    height: 100px;
+      //}
+    }
+  }
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .cover-gfx{
+      svg{
+        left: 0;
+      }
+      rect{
+        //width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .cover-gfx-research{
+    svg{
+      background:#347E84;
+    }
+    path{
+      fill: #fff;
+    }
+  }
+  #banner-forskningsdagene{
+    position: absolute;
+    top: 260px;
+    right: 10%;
+    display: block;
+    width: 30rem;
+    img{
+      display: block;
+    }
+  }
+  [data-page-category='study']{
+    #banner-forskningsdagene{
+      display: none;
+    }
+  }
+  .cover-gfx-about{
+    path{
+      fill: #347E84;
+    }
+  }
+  .cover-gfx-admission{
+
+  }
+  .cover-gfx-studyprogram{
+
+  }
+  .cover-gfx-coursedescription{
+
+  }
+  .cover-photo {
+    display: block;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    background-position: 50% 0;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 auto 1em;
+    //border-radius: .4rem;
+    &:before {
+      padding-bottom: 56.25%;
+    }
+  }
+  .cover-photo-blur {
+    opacity: 0;
+  }
+  // video styling
+  .cover-video {
+    position: absolute;
+    top: 0;
+    max-width: 100%;
+  }
+  .touch {
+    .cover-video {
+      min-width: 100%;
+    }
+  }
+  .cover-video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 0;
+    width: 2000px;
+    margin-top: 0;
+  }
+  @include mq($until: small) {
+    .cover-gfx{
+
+      svg{
+        position: relative;
+      }
+    }
+    [data-page-category='hero'], [data-page-category='bachelor'], [data-page-category='master'], [data-page-category='flexible'] {
+      #study {
+        article {
+          h1 {
+            font-size: 2.2rem;
+          }
+          h2 {
+            font-size: 1.8rem;
+          }
+        }
+      }
+    }
+  }
+  @include mq($from: small, $until: large) {
+
+    .cover-gfx{
+
+      svg{
+        position: relative;
+      }
+    }
+
+    //[data-page-category='hero'], [data-page-category='bachelor'], [data-page-category='master'], [data-page-category='flexible'] {
+    //    #study {
+    //        article {
+    //            padding-top: 0rem;
+    //            //text-align: center;
+    //            height: auto;
+    //            h1 {
+    //                font-size: 3.2rem;
+    //            }
+    //            h2 {
+    //                font-size: 2.4rem;
+    //            }
+    //        }
+    //    }
+    //}
+  }
+  //@include mq($from: large) {
+  //    [data-page-category='hero'], [data-page-category='bachelor'], [data-page-category='master'], [data-page-category='flexible'] {
+  //      .cover-video{
+  //        top: 5.4rem;
+  //        border-top-left-radius: .4rem;
+  //        border-top-right-radius: .4rem;
+  //      }
+  //        #study {
+  //            article {
+  //                padding-top: 12rem;
+  //                //text-align: center;
+  //                height: 50.6rem;
+  //            }
+  //        }
+  //    }
+  //}
 }
 
 
 
 
 .branding {
-    width: 100%;
-    .logo {
-        display: block;
-        margin: 2rem auto;
-        width: 150px;
-        width: 15rem;
-    }
+  width: 100%;
+  .logo {
+    display: block;
+    margin: 2rem auto;
+    width: 150px;
+    width: 15rem;
+  }
 }
 
 .cover-quote {
-    display: none;
-    position: absolute;
-    top: 10rem;
-    left: 50%;
-    margin-left: -52rem;
-    width: 104rem;
-    font-size: 4rem;
-    color: $white;
-    line-height: 1;
-    font-weight: 100;
-    transition: color .5s;
-    border-radius: $border-radius-standard;
-    padding: 0;
-    padding-bottom: 1rem;
+  display: none;
+  position: absolute;
+  top: 10rem;
+  left: 50%;
+  margin-left: -52rem;
+  width: 104rem;
+  font-size: 3rem;
+  color: $white;
+  line-height: 1;
+  font-weight: 100;
+  transition: color .5s;
+  border-radius: $border-radius-standard;
+  padding: 0;
+  padding-bottom: 1rem;
+  a {
+    color: #fff;
+    padding: 1rem 3rem;
+  }
+  p {
+    border-left: none;
+    font-style: normal;
+    line-height: 1.2;
+  }
+  footer {
+    //display: none;
+    text-align: right;
+    width: 100%;
+    padding-right: 3rem;
+    font-size: 2rem;
+  }
+  &:hover {
     a {
-        color: #fff;
-        padding: 1rem 3rem;
+      color: #000;
     }
-    p {
-        border-left: none;
-        font-style: normal;
-        line-height: 1.2;
-    }
-    footer {
-        //display: none;
-        text-align: right;
-        width: 100%;
-        padding-right: 3rem;
-        font-size: 2rem;
-    }
-    &:hover {
-        a {
-            color: #000;
-        }
-        color: #000;
-        text-shadow: none;
-        background: transparentize($white, .2);
-    }
-    @include mq($until: small) {
-        display: none !important;
-    }
-    @include mq($from: small, $until: large) {
-        top: 10rem;
-        font-size: 2rem;
-        width: 76rem;
-        margin-left: -38rem;
-    }
+    color: #000;
+    text-shadow: none;
+    background: transparentize($white, .2);
+  }
+  @include mq($until: small) {
+    display: none !important;
+  }
+  @include mq($from: small, $until: large) {
+    top: 10rem;
+    font-size: 2rem;
+    width: 76rem;
+    margin-left: -38rem;
+  }
 }
 
 
 
 .cover {
-    @include mq($from: small, $until: large) {
-        [data-page-category='hero'], [data-page-category='bachelor'], [data-page-category='master'], [data-page-category='flexible'] {
-            #study {
-                margin-top: -32rem;
-            }
+  @include mq($from: small, $until: large) {
+    //[data-page-category='hero'], [data-page-category='bachelor'], [data-page-category='master'], [data-page-category='flexible'] {
+    //    #study {
+    //        margin-top: -32rem;
+    //    }
+    //}
+    #study {
+      .lo-one-third {
+        width: 48%;
+        float: left;
+        //background: pink;
+        img {
+          width: 100%;
         }
-        #study {
-            .lo-one-third {
-                width: 48%;
-                float: left;
-                //background: pink;
-                img {
-                    width: 100%;
-                }
-            }
-        }
+      }
     }
-    @include mq($from: large) {
-        #study {
-            margin-top: -50rem;
-        }
+  }
+  @include mq($from: large) {
+    #study {
+      margin-top: -37rem;
     }
+  }
 }

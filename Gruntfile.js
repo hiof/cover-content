@@ -269,7 +269,7 @@ module.exports = function(grunt) {
 
 
 
-    grunt.registerTask('deploy-stage', ['deploy', 'sftp:stage']);
+    grunt.registerTask('deploy-staging', ['deploy', 'sftp:stage']);
     grunt.registerTask('deploy-prod', ['deploy', 'sftp:prod']);
 
 };

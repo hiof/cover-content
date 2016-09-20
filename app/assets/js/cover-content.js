@@ -47,7 +47,6 @@
             }
         } else {
             pageType = $("#main").data("page-category");
-            console.log(pageType);
         }
 
 
@@ -440,7 +439,11 @@
         $(coverWrapper).addClass('height-' + data[size].imgHeight);
         $(photoWrapper).css('background-image', 'url(' + data[size].normal + ')').addClass('height-' + data[size].imgHeight);
         $(blurWrapper).css('background-image', 'url(' + data[size].blurred + ')').addClass('height-' + data[size].imgHeight);
-        var forskningsdagene = '<a id="banner-forskningsdagene" href="http://hiof.no/forskning/forskningsdagene"><img src="/assets/plugins/cover-content/images/gfx/forskningsdagene-logo.svg"/></a>';
+
+        var forskningsdagene = '';
+        if (!$('#main[data-page-category="homepage"]').length) {
+          forskningsdagene = '<a id="banner-forskningsdagene" href="http://hiof.no/forskning/forskningsdagene"><img src="/assets/plugins/cover-content/images/gfx/forskningsdagene-logo.svg"/></a>';
+        }
 
         $(coverWrapper).append(photoWrapper).append(blurWrapper).append(forskningsdagene);
         //console.log(data[1200]);

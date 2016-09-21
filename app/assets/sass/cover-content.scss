@@ -350,6 +350,9 @@ html.cover {
         }
       }
     }
+    #banner-forskningsdagene{
+      display: none;
+    }
   }
   @include mq($from: small, $until: large) {
 

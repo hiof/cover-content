@@ -265,21 +265,22 @@ html.cover {
       fill: #fff;
     }
   }
-  #banner-forskningsdagene{
-    position: absolute;
-    top: 260px;
-    right: 10%;
-    display: block;
-    width: 30rem;
-    img{
-      display: block;
-    }
-  }
-  [data-page-category='study']{
-    #banner-forskningsdagene{
-      display: none;
-    }
-  }
+  // Sitewide clickable banner styling
+  //#banner-forskningsdagene{
+  //  position: absolute;
+  //  top: 260px;
+  //  right: 10%;
+  //  display: block;
+  //  width: 30rem;
+  //  img{
+  //    display: block;
+  //  }
+  //}
+  //[data-page-category='study']{
+  //  #banner-forskningsdagene{
+  //    display: none;
+  //  }
+  //}
   .cover-gfx-about{
     path{
       fill: #347E84;
@@ -350,9 +351,9 @@ html.cover {
         }
       }
     }
-    #banner-forskningsdagene{
-      display: none;
-    }
+    //#banner-forskningsdagene{
+    //  display: none;
+    //}
   }
   @include mq($from: small, $until: large) {
 

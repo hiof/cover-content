@@ -440,14 +440,13 @@
         $(photoWrapper).css('background-image', 'url(' + data[size].normal + ')').addClass('height-' + data[size].imgHeight);
         $(blurWrapper).css('background-image', 'url(' + data[size].blurred + ')').addClass('height-' + data[size].imgHeight);
 
-        var forskningsdagene = '';
-        if (!$('#main[data-page-category="homepage"]').length) {
-          forskningsdagene = '<a id="banner-forskningsdagene" href="http://hiof.no/forskning/forskningsdagene"><img src="/assets/plugins/cover-content/images/gfx/forskningsdagene-logo.svg"/></a>';
-        }
+        // # Add sitewide banner to the pages
+        //var forskningsdagene = '';
+        //if (!$('#main[data-page-category="homepage"]').length) {
+        //  forskningsdagene = '<a id="banner-forskningsdagene" href="http://hiof.no/forskning/forskningsdagene"><img src="/assets/plugins/cover-content/images/gfx/forskningsdagene-logo.svg"/></a>';
+        //}
 
-        $(coverWrapper).append(photoWrapper).append(blurWrapper).append(forskningsdagene);
-        //console.log(data[1200]);
-        //var imageUrl = data[1200] + "";
+        $(coverWrapper).append(photoWrapper).append(blurWrapper);
 
         $('#main').prepend(coverWrapper);
 

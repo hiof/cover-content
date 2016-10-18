@@ -72,8 +72,10 @@ html.cover {
           margin-top: 0;
           margin-bottom: 0;
         }
-        .btn{
-          width: 100%;
+        &.lo-one-third{
+          .btn{
+            width: 100%;
+          }
         }
       }
       footer {

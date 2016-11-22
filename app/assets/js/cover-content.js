@@ -1,47 +1,24 @@
-(function(Hiof, undefined) {
 
-  addCoverContentToPage = function() {
 
+
+class CoverContent {
+  constructor() {
+    this.view = new View();
+    this.defaults = {
+      gfx: '/assets/plugins/cover-content/images/gfx/grid.svg',
+      video: '/assets/plugins/cover-content/js/data/cover-video.json',
+      image: '/assets/plugins/cover-content/js/data/cover-photo.json'
+    }
+  }
+
+  addCoverContentToPage() {
     var pageType,
     windowWidth = $(window).width(),
     entry;
 
     // If the page is in the study cataloge
     if ($('#study-catalog-cover-id').length) {
-      var facultyId = $('#study-catalog-cover-id').attr('data-study-catalog-cover-id'),
-      programId = $('#study-catalog-cover-id').attr('data-study-catalog-program-id');
-
-      if (facultyId === '22440') {
-        // HS
-        // If vold i nære relasjoner, use only the blurred set of images
-        if (programId === '2329') {
-          pageType = 'hs-voldinaererelasjoner';
-        } else {
-          pageType = 'hs';
-        }
-      } else if (facultyId === '22450') {
-        // IR
-        pageType = 'ir';
-      } else if (facultyId === '22455') {
-        // IT
-        pageType = 'it';
-      } else if (facultyId === '22430') {
-        // LU
-        pageType = 'lu';
-      } else if (facultyId === '22460') {
-        // ØSS
-        pageType = 'oss';
-      } else if (facultyId === '22470') {
-        // Scenekunst
-        pageType = "as";
-        //pageType = 'as';
-      } else if (facultyId === '22480') {
-        // HiØ Videre
-        pageType = "page";
-        //pageType = 'as';
-      } else {
-        pageType = "page";
-      }
+      pageType = "coursedescription";
     } else {
       pageType = $("#main").data("page-category");
     }
@@ -75,28 +52,28 @@
       // Add HiØ logo as the cover photo on Index
       generateMarkupBranding();
       if (windowWidth <= 420 && ((pageType === "hero") || (pageType === "bachelor") || (pageType === "master") || (pageType === "flexible"))) {
-        generateMarkupVideoMobile();
+        this.generateMarkupVideoMobile();
       }
     } else if ((windowWidth <= 420 && ((pageType === "homepage") || (pageType === "hero") || (pageType === "bachelor") || (pageType === "master") || (pageType === "flexible")))) {
       // Dont add a cover-photo on the smallest screens
-      generateMarkupVideoMobile(pageType);
+      this.generateMarkupVideoMobile(pageType);
     } else if ((pageType === "hero") || (pageType === "bachelor") || (pageType === "master") || (pageType === "flexible")) {
-      getVideo(pageType);
+      this.getVideo(pageType);
     } else {
       // Add cover photo
       if (pageType === "homepage") {
         pageType = "index";
       }
       if ((pageType === "admission") || (pageType === "about") || (pageType === "studyprogram") || (pageType === "coursedescription")) {
-        addGfx(pageType);
+        this.addGfx(pageType);
       } else {
-        getImage(pageType);
+        this.getImage(pageType);
       }
 
     }
 
-  };
-  addGfx = function(pageType) {
+  }
+  addGfx(pageType) {
     // Setup variables
     var coverWrapper = document.createElement('div'),
     gfxWrapper = $(coverWrapper).clone(),
@@ -119,38 +96,60 @@
     $(coverWrapper).append(gfxWrapper);
     // Append the wrapper to the #main element on the page
     $('#main').prepend(coverWrapper);
-
-
-
   };
 
-  getVideo = function(pageType) {
-    $.getJSON("/assets/plugins/cover-content/js/data/cover-video.json", function(data) {
+  getVideo(pageType) {
+    let that = this;
+    let options = {};
+    options.url = '/assets/plugins/cover-content/js/data/cover-video.json';
+    options.pageType = pageType;
+    this.view.getData(options, that).success(function(data){
       // Get data from a random entry based on the pageType
-      var entry = data.cover[pageType];
+      var entry = data.cover[options.pageType];
 
       // Callback to generate the content
-      generateMarkupVideo(entry);
+      that.generateMarkupVideo(entry);
     });
-  };
-  getImage = function(pageType) {
 
+    //$.getJSON("/assets/plugins/cover-content/js/data/cover-video.json", function(data) {
+    //  // Get data from a random entry based on the pageType
+    //  var entry = data.cover[pageType];
+    //
+    //  // Callback to generate the content
+    //  this.generateMarkupVideo(entry);
+    //});
+  }
 
-    $.getJSON("/assets/plugins/cover-content/js/data/cover-photo.json", function(data) {
-      // Get data from a random entry based on the pageType
-      //console.log(data.cover[pageType]);
-
-      var entriesInCategory = data.cover[pageType],
+  getImage(pageType) {
+    let that = this;
+    let options = {};
+    options.url = "/assets/plugins/cover-content/js/data/cover-photo.json";
+    options.pageType = pageType;
+    console.log(options);
+    this.view.getData(options, that).success(function(data){
+      var entriesInCategory = data.cover[options.pageType],
       totalEntries = Object.keys(entriesInCategory).length,
       randomEntry = entriesInCategory[Math.floor(Math.random() * totalEntries)];
 
       // Callback to generate the content
-      generateMarkupPicture(randomEntry);
+      that.generateMarkupPicture(randomEntry);
     });
 
 
-  };
-  generateMarkupVideoMobile = function(pageType) {
+    //$.getJSON("/assets/plugins/cover-content/js/data/cover-photo.json", function(data) {
+    //  // Get data from a random entry based on the pageType
+    //  //console.log(data.cover[pageType]);
+    //
+    //  var entriesInCategory = data.cover[pageType],
+    //  totalEntries = Object.keys(entriesInCategory).length,
+    //  randomEntry = entriesInCategory[Math.floor(Math.random() * totalEntries)];
+    //
+    //  // Callback to generate the content
+    //  this.generateMarkupPicture(randomEntry);
+    //});
+  }
+
+  generateMarkupVideoMobile(pageType) {
     var vimeoElement = document.createElement('iframe');
 
 
@@ -179,8 +178,9 @@
     }
     $('#study h1').hide();
     $('#main').prepend(vimeoElement);
-  };
-  generateMarkupBgcolor = function() {
+  }
+
+  generateMarkupBgcolor() {
 
     var coverWrapper = document.createElement('div'),
     colorWrapper = $(coverWrapper).clone(),
@@ -193,8 +193,8 @@
     $(coverWrapper).append(colorWrapper);
 
     $('#main').prepend(coverWrapper);
-  };
-  generateMarkupBranding = function() {
+  }
+  generateMarkupBranding() {
     var brandingWrapper = document.createElement('div'),
     lang = Hiof.languageCheck(),
     logo;
@@ -205,17 +205,17 @@
     }
     $(brandingWrapper).addClass("branding").append(logo);
     $('#main').prepend(brandingWrapper);
-  };
+  }
 
 
-  generateMarkupVideo = function(data) {
+  generateMarkupVideo(data) {
     var coverWrapper = document.createElement('div'),
-        imagebg = document.createElement('img'),
-        videoWrapper = document.createElement('video'),
-        videoSourceWebm = document.createElement('source'),
-        videoSourceMp4 = document.createElement('source'),
-        windowWidth = $(window).width();
-        videoHeight = (windowWidth * (450 / 1040)) + 'px';
+    imagebg = document.createElement('img'),
+    videoWrapper = document.createElement('video'),
+    videoSourceWebm = document.createElement('source'),
+    videoSourceMp4 = document.createElement('source'),
+    windowWidth = $(window).width();
+    videoHeight = (windowWidth * (450 / 1040)) + 'px';
 
     if (windowWidth > 1040) {
       videoHeight = '450px';
@@ -307,9 +307,9 @@
       document.getElementById('cover-video').play();
     });
 
-  };
+  }
 
-  generateMarkupPicture = function(data) {
+  generateMarkupPicture(data) {
 
 
     var coverWrapper = document.createElement('div'),
@@ -363,9 +363,9 @@
     $('#main').prepend(coverWrapper);
 
 
-  };
+  }
 
-  quotes = function(quoteId) {
+  quotes(quoteId) {
 
     $.getJSON("/assets/js/data/quotes.json", function(data) {
       var randomEntry = data.quotes[Math.floor(Math.random() * data.quotes.length)];
@@ -380,9 +380,9 @@
       $('#content').append(quote);
       $('.cover-quote').fadeIn("slow");
     });
-  };
+  }
 
-  function getTimeRemaining(endtime) {
+  getTimeRemaining(endtime) {
     var t = Date.parse(endtime) - Date.parse(new Date());
     var seconds = Math.floor((t / 1000) % 60);
     var minutes = Math.floor((t / 1000 / 60) % 60);
@@ -397,7 +397,7 @@
     };
   }
 
-  function initializeClock(id, endtime) {
+  initializeClock(id, endtime) {
     var clock = document.getElementById(id);
     var daysSpan = clock.querySelector('.days');
     var hoursSpan = clock.querySelector('.hours');
@@ -421,13 +421,27 @@
     var timeinterval = setInterval(updateClock, 1000);
   }
 
+
+
+
+};
+
+
+(function(Hiof, undefined) {
+
+
   // On load
   $(function() {
+
+    let coverContent = new CoverContent();
+
+    // Expose functions to the window
+    window.Hiof.catalogQuotes = coverContent.quotes;
 
     var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
 
     // Cover content initiater
-    addCoverContentToPage();
+    coverContent.addCoverContentToPage();
 
 
     $(window).resize(function() {
@@ -440,14 +454,14 @@
     // Check if the page should use quotes
     if ($('html.quote').length) {
       // Add Quotes
-      quotes();
+      coverContent.quotes();
       // Refresh Quotes
       window.setInterval(function() {
         $(".cover-quote").fadeOut(500, function() {
           var quoteId = $(this).data("id");
           //console.log(quoteId);
           $(this).remove();
-          quotes(quoteId);
+          coverContent.quotes(quoteId);
         });
       }, 100000);
     }
@@ -459,8 +473,5 @@
       }
     });
   });
-
-  // Expose functions to the window
-  window.Hiof.catalogQuotes = quotes;
 
 })(window.Hiof = window.Hiof || {});

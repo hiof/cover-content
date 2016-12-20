@@ -6,7 +6,7 @@
   ],
   "description": "cover-content plugin",
   "license": "GNU",
-  "dependencies": {
+  "devDependencies": {
     "bootstrap": "~3.3.5",
     "jquery.scrollTo": "~1.4.11",
     "handlebars": "~2.0.0",

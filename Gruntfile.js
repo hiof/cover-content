@@ -13,20 +13,6 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     moment: require('moment'),
     // Tasks
-    //less: {
-    //    standard: {
-    //        options: {
-    //        },
-    //        files: [{
-    //            expand: true,
-    //            cwd: 'app/assets/less/',
-    //            src: ['*.less'],
-    //            dest: 'build/',
-    //            ext: '.css'
-    //        }]
-    //    }
-    //},
-
     sass: {
       options: {
 
@@ -37,18 +23,13 @@ module.exports = function(grunt) {
         }
       }
     },
-
-
     autoprefixer: {
       options: {
         browsers: ['last 2 versions', 'ie 8', 'ie 9']
-        //diff: 'build/config/*.diff'
       },
       prefix: {
         expand: true,
-        //flatten: true,
         src: 'build/*.css'
-        //dest: 'tmp/css/prefixed/'
       }
     },
     cssmin: {
@@ -100,20 +81,15 @@ module.exports = function(grunt) {
         filter: 'isFile'
       },
     },
-
-
     eslint: {
       options: {
-        //format: require('babel-eslint'),
         quiet: true
-        //rulePath: ['node_modules/eslint-rules-es2015/lib/index.js']
       },
       target: ['app/assets/js/**/*.js']
     },
     babel: {
       options: {
         sourceMap: true
-        //presets: ['es2015']
       },
       dist: {
         files: {
@@ -121,32 +97,11 @@ module.exports = function(grunt) {
         }
       }
     },
-
     clean: {
       dist: ['dist/**/*'],
       deploy: ['deploy/**/*'],
       build: ['build/**/*']
     },
-
-    //jshint: {
-    //    options: {
-    //        ignores: ['app/assets/js/templates/templates.js']
-    //    },
-    //    files: ['app/assets/js/**/*.js', 'Gruntfile.js', 'bower.json', 'package.json']
-    //},
-    //handlebars: {
-    //    options: {
-    //        namespace: 'Hiof.Templates',
-    //        processName: function(filePath) {
-    //            return filePath.replace(/^app\/templates\//, '').replace(/\.hbs$/, '');
-    //        }
-    //    },
-    //    all: {
-    //        files: {
-    //            "build/templates.js": ["app/templates/**/*.hbs"]
-    //        }
-    //    }
-    //},
     concat: {
       scripts: {
         src: [
@@ -260,23 +215,16 @@ module.exports = function(grunt) {
         directoryPermissions: parseInt(755, 8)
       }
     }
+  },
+  watch: {
+    all: {
+      files: ['app/assets/**/*'],
+      tasks: ['deploy-staging'],
+      options: {
+        //livereload: true,
+      },
+    }
   }
-  //watch: {
-  //  hbs: {
-  //    files: ['app/templates/**/*.hbs'],
-  //    tasks: ['handlebars', 'copy:jstemplates'],
-  //    options: {
-  //      livereload: true,
-  //    },
-  //  },
-  //  js: {
-  //    files: ['app/assets/js/**/*.js', 'app/assets/js/**/*.json'],
-  //    tasks: ['jshint', 'concat:scripts', 'versioning:build'],
-  //    options: {
-  //      livereload: true,
-  //    },
-  //  },
-  //}
 
 });
 

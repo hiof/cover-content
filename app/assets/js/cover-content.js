@@ -1,6 +1,3 @@
-
-
-
 class CoverContent {
   constructor() {
     this.view = new View();
@@ -48,13 +45,9 @@ class CoverContent {
       pageType = "page";
     }
 
-    if ((windowWidth <= 770) && (pageType === "homepage")) {
-      // Add HiØ logo as the cover photo on Index
-      generateMarkupBranding();
-      if (windowWidth <= 420 && ((pageType === "hero") || (pageType === "bachelor") || (pageType === "master") || (pageType === "flexible"))) {
-        this.generateMarkupVideoMobile();
-      }
-    } else if ((windowWidth <= 420 && ((pageType === "homepage") || (pageType === "hero") || (pageType === "bachelor") || (pageType === "master") || (pageType === "flexible")))) {
+    if((windowWidth <= 955) && (pageType === "homepage")){
+      this.addGfx(pageType);
+    } else if ((windowWidth <= 350 && ((pageType === "homepage") || (pageType === "hero") || (pageType === "bachelor") || (pageType === "master") || (pageType === "flexible")))) {
       // Dont add a cover-photo on the smallest screens
       this.generateMarkupVideoMobile(pageType);
     } else if ((pageType === "hero") || (pageType === "bachelor") || (pageType === "master") || (pageType === "flexible")) {
@@ -64,7 +57,7 @@ class CoverContent {
       if (pageType === "homepage") {
         pageType = "index";
       }
-      if ((pageType === "admission") || (pageType === "about") || (pageType === "studyprogram") || (pageType === "coursedescription")) {
+      if ((pageType === "admission") || (pageType === "about") || (pageType === "studyprogram") || (pageType === "coursedescription") || (pageType === "study")) {
         this.addGfx(pageType);
       } else {
         this.getImage(pageType);
@@ -90,12 +83,18 @@ class CoverContent {
       // Get the <svg> node
       var importedSVGRootElement = document.importNode(svgDoc.documentElement, true);
       // Append the <svg> node to the gfxWrapper
-      $(gfxWrapper).append(importedSVGRootElement);
+      $(gfxWrapper).prepend(importedSVGRootElement);
     });
+    if((windowWidth <= 955) && (pageType === "homepage")){
+      $(coverWrapper).css({'height':'16rem','margin-bottom': '0'});
+      $(gfxWrapper).append('<a href="http://hiof.no/studier" class="btn btn-primary">Se våre studier</a>');
+    }
     // Append the graphic wrapper into the wrapper
     $(coverWrapper).append(gfxWrapper);
+
     // Append the wrapper to the #main element on the page
     $('#main').prepend(coverWrapper);
+
   };
 
   getVideo(pageType) {
@@ -111,13 +110,6 @@ class CoverContent {
       that.generateMarkupVideo(entry);
     });
 
-    //$.getJSON("/assets/plugins/cover-content/js/data/cover-video.json", function(data) {
-    //  // Get data from a random entry based on the pageType
-    //  var entry = data.cover[pageType];
-    //
-    //  // Callback to generate the content
-    //  this.generateMarkupVideo(entry);
-    //});
   }
 
   getImage(pageType) {
@@ -125,7 +117,6 @@ class CoverContent {
     let options = {};
     options.url = "/assets/plugins/cover-content/js/data/cover-photo.json";
     options.pageType = pageType;
-    console.log(options);
     this.view.getData(options, that).success(function(data){
       var entriesInCategory = data.cover[options.pageType],
       totalEntries = Object.keys(entriesInCategory).length,
@@ -135,18 +126,6 @@ class CoverContent {
       that.generateMarkupPicture(randomEntry);
     });
 
-
-    //$.getJSON("/assets/plugins/cover-content/js/data/cover-photo.json", function(data) {
-    //  // Get data from a random entry based on the pageType
-    //  //console.log(data.cover[pageType]);
-    //
-    //  var entriesInCategory = data.cover[pageType],
-    //  totalEntries = Object.keys(entriesInCategory).length,
-    //  randomEntry = entriesInCategory[Math.floor(Math.random() * totalEntries)];
-    //
-    //  // Callback to generate the content
-    //  this.generateMarkupPicture(randomEntry);
-    //});
   }
 
   generateMarkupVideoMobile(pageType) {
@@ -196,12 +175,12 @@ class CoverContent {
   }
   generateMarkupBranding() {
     var brandingWrapper = document.createElement('div'),
-    lang = Hiof.languageCheck(),
+    lang = Hiof.view.languageCheck(),
     logo;
     if (lang === "eng") {
-      logo = Hiof.getSvgIcon("logo-hiof-en");
+      logo = Hiof.view.getSvgIcon("logo-hiof-en");
     } else {
-      logo = Hiof.getSvgIcon("logo-hiof");
+      logo = Hiof.view.getSvgIcon("logo-hiof");
     }
     $(brandingWrapper).addClass("branding").append(logo);
     $('#main').prepend(brandingWrapper);
@@ -365,22 +344,22 @@ class CoverContent {
 
   }
 
-  quotes(quoteId) {
-
-    $.getJSON("/assets/js/data/quotes.json", function(data) {
-      var randomEntry = data.quotes[Math.floor(Math.random() * data.quotes.length)];
-
-      if (randomEntry.id == quoteId) {
-        randomEntry.id--;
-        if (randomEntry.id == "0") {
-          randomEntry.id = "3";
-        }
-      }
-      var quote = '<blockquote class="cover-quote" data-id="' + randomEntry.id + '""><a href="' + randomEntry.url + '"><p>&ldquo;' + randomEntry.text + '&rdquo;</p><footer><cite>- ' + randomEntry.cite + '</cite></footer></a></blockquote>';
-      $('#content').append(quote);
-      $('.cover-quote').fadeIn("slow");
-    });
-  }
+  //quotes(quoteId) {
+  //
+  //  $.getJSON("/assets/js/data/quotes.json", function(data) {
+  //    var randomEntry = data.quotes[Math.floor(Math.random() * data.quotes.length)];
+  //
+  //    if (randomEntry.id == quoteId) {
+  //      randomEntry.id--;
+  //      if (randomEntry.id == "0") {
+  //        randomEntry.id = "3";
+  //      }
+  //    }
+  //    var quote = '<blockquote class="cover-quote" data-id="' + randomEntry.id + '""><a href="' + randomEntry.url + '"><p>&ldquo;' + randomEntry.text + '&rdquo;</p><footer><cite>- ' + randomEntry.cite + '</cite></footer></a></blockquote>';
+  //    $('#content').append(quote);
+  //    $('.cover-quote').fadeIn("slow");
+  //  });
+  //}
 
   getTimeRemaining(endtime) {
     var t = Date.parse(endtime) - Date.parse(new Date());
@@ -429,14 +408,13 @@ class CoverContent {
 
 (function(Hiof, undefined) {
 
-
   // On load
   $(function() {
 
     let coverContent = new CoverContent();
 
     // Expose functions to the window
-    window.Hiof.catalogQuotes = coverContent.quotes;
+    //window.Hiof.catalogQuotes = coverContent.quotes;
 
     var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
 
@@ -448,23 +426,23 @@ class CoverContent {
       $('#cover').css('height', $('.cover-photo-bg').height() + 'px');
     });
     // Cover quote initiater
-    if ($('#studie').length) {
-      $("html").addClass("quote");
-    }
-    // Check if the page should use quotes
-    if ($('html.quote').length) {
-      // Add Quotes
-      coverContent.quotes();
-      // Refresh Quotes
-      window.setInterval(function() {
-        $(".cover-quote").fadeOut(500, function() {
-          var quoteId = $(this).data("id");
-          //console.log(quoteId);
-          $(this).remove();
-          coverContent.quotes(quoteId);
-        });
-      }, 100000);
-    }
+    //if ($('#studie').length) {
+    //  $("html").addClass("quote");
+    //}
+    //// Check if the page should use quotes
+    //if ($('html.quote').length) {
+    //  // Add Quotes
+    //  coverContent.quotes();
+    //  // Refresh Quotes
+    //  window.setInterval(function() {
+    //    $(".cover-quote").fadeOut(500, function() {
+    //      var quoteId = $(this).data("id");
+    //      //console.log(quoteId);
+    //      $(this).remove();
+    //      coverContent.quotes(quoteId);
+    //    });
+    //  }, 100000);
+    //}
     $(window).scroll(function() {
       if ((Hiof.Options.distanceToTop === 0) || (Hiof.Options.distanceToTop < 0)) {
         $(".cover-quote").css("opacity", 100);

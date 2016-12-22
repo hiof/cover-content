@@ -4,6 +4,28 @@
 
 A plugin with the required files for the Cover content functionality.
 
+## Required knowledge
+
+This package require knowledge of the following technologies, technics and modules:
+
+- [Javascript](https://en.wikipedia.org/wiki/JavaScript)
+    - [ES2015](https://en.wikipedia.org/wiki/ECMAScript#6th_Edition)
+    - [Babel](https://babeljs.io)
+    - [jQuery](https://jquery.com)
+    - [JSON](http://jsonapi.org)
+- [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+    - [Sass](http://sass-lang.com)
+- [HTML](https://en.wikipedia.org/wiki/HTML)
+    - [Handlebars](http://handlebarsjs.com)
+- [Bootstrap](http://getbootstrap.com)
+- [Node.js](https://nodejs.org)
+    - [NPM](https://www.npmjs.com)
+- [Grunt](http://gruntjs.com) and Grunt tasks (see `Gruntfile.js` for details)
+- [Bower](http://bower.io)
+- [SSH](https://en.wikipedia.org/wiki/Secure_Shell)
+- [Git](https://git-scm.com)
+    - [Github](https://github.com)
+
 ## Copyright
 
 This project is distributed under a GNU General Public License v3 - Take a look at the COPYING file for details.
@@ -40,7 +62,7 @@ $ bower install
 
 ## Required
 
-- Required for hiof.no to work as espected
+- Required for hiof.no to work as expected
 
 ## Releases
 
@@ -54,10 +76,9 @@ $ bower install
 
 ### Roadmap
 
-- [ ] v1.2.0
+- [ ] v1.X.0
   - [ ] Inline JSON
-- [ ] v1.3.0
+- [ ] v1.X.0
   - [ ] More colors
   - [ ] More pictures
   - [ ] Remove old pictures
-

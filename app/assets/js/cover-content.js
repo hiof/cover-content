@@ -193,7 +193,7 @@ class CoverContent {
     videoWrapper = document.createElement('video'),
     videoSourceWebm = document.createElement('source'),
     videoSourceMp4 = document.createElement('source'),
-    windowWidth = $(window).width();
+    windowWidth = $(window).width(),
     videoHeight = (windowWidth * (450 / 1040)) + 'px';
 
     if (windowWidth > 1040) {

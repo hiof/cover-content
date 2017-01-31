@@ -180,43 +180,45 @@ html.cover {
   }
   // Note: This is styling for videoes
   //---------------------------------------
-  //[data-page-category='hero'],
-  //[data-page-category='bachelor'],
-  //[data-page-category='master'],
-  //[data-page-category='flexible'] {
-  //    #study {
-  //        background: transparent;
-  //        transition: background-color 0.5s ease;
-  //        padding-bottom: 0rem;
-  //        article {
-  //            text-align: center;
-  //            h1, h2 {
-  //                font-weight: 100;
-  //                line-height: 2em;
-  //                color: $black;
-  //            }
-  //            h1 {
-  //                font-size: 6rem;
-  //            }
-  //            h2 {
-  //                font-size: 4rem;
-  //            }
-  //        }
-  //        &.light {
-  //            h1, h2 {
-  //                color: $black;
-  //            }
-  //        }
-  //        &.dark {
-  //            h1, h2 {
-  //                color: $white;
-  //            }
-  //        }
-  //        &:hover{
-  //          background-color: rgba(255, 255, 255, .9);
-  //        }
-  //    }
-  //}
+  [data-page-category='hero'],
+  [data-page-category='bachelor'],
+  [data-page-category='master'],
+  [data-page-category='flexible'] {
+      #study {
+          background: transparent;
+          transition: background-color 0.5s ease;
+          padding-bottom: 0rem;
+          margin-top: -42rem;
+          max-height: 43.5rem;
+          article {
+              text-align: center;
+              h1, h2 {
+                  font-weight: 100;
+                  line-height: 2em;
+                  color: $black;
+              }
+              h1 {
+                  font-size: 6rem;
+              }
+              h2 {
+                  font-size: 4rem;
+              }
+          }
+          &.light {
+              h1, h2 {
+                  color: $black;
+              }
+          }
+          &.dark {
+              h1, h2 {
+                  color: $white;
+              }
+          }
+          &:hover{
+            background-color: rgba(255, 255, 255, .9);
+          }
+      }
+  }
   #cover {
     display: block;
     width: 100%;
@@ -398,38 +400,39 @@ html.cover {
       }
     }
 
-    //[data-page-category='hero'], [data-page-category='bachelor'], [data-page-category='master'], [data-page-category='flexible'] {
-    //    #study {
-    //        article {
-    //            padding-top: 0rem;
-    //            //text-align: center;
-    //            height: auto;
-    //            h1 {
-    //                font-size: 3.2rem;
-    //            }
-    //            h2 {
-    //                font-size: 2.4rem;
-    //            }
-    //        }
-    //    }
-    //}
+    [data-page-category='hero'], [data-page-category='bachelor'], [data-page-category='master'], [data-page-category='flexible'] {
+        #study {
+            article {
+                padding-top: 0rem;
+                //text-align: center;
+                height: auto;
+                h1 {
+                    font-size: 3.2rem;
+                }
+                h2 {
+                    font-size: 2.4rem;
+                }
+            }
+        }
+    }
   }
-  //@include mq($from: large) {
-  //    [data-page-category='hero'], [data-page-category='bachelor'], [data-page-category='master'], [data-page-category='flexible'] {
-  //      .cover-video{
-  //        top: 5.4rem;
-  //        border-top-left-radius: .4rem;
-  //        border-top-right-radius: .4rem;
-  //      }
-  //        #study {
-  //            article {
-  //                padding-top: 12rem;
-  //                //text-align: center;
-  //                height: 50.6rem;
-  //            }
-  //        }
-  //    }
-  //}
+  @include mq($from: large) {
+      [data-page-category='hero'], [data-page-category='bachelor'], [data-page-category='master'], [data-page-category='flexible'] {
+        padding-top: 0;
+        .cover-video{
+          top: 5.4rem;
+          border-top-left-radius: .4rem;
+          border-top-right-radius: .4rem;
+        }
+          #study {
+              article {
+                  padding-top: 4rem;
+                  //text-align: center;
+                  height: 50.6rem;
+              }
+          }
+      }
+  }
 }
 
 
@@ -499,11 +502,11 @@ html.cover {
 
 html.cover {
   @include mq($from: small, $until: large) {
-    //[data-page-category='hero'], [data-page-category='bachelor'], [data-page-category='master'], [data-page-category='flexible'] {
-    //    #study {
-    //        margin-top: -32rem;
-    //    }
-    //}
+    [data-page-category='hero'], [data-page-category='bachelor'], [data-page-category='master'], [data-page-category='flexible'] {
+        #study {
+            margin-top: -32rem;
+        }
+    }
     #study {
       .lo-one-third {
         width: 48%;

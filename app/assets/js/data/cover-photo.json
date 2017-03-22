@@ -1102,6 +1102,50 @@
 
       }
     },
-    "videre": {}
+    "videre": {},
+    "maglu": {
+      "0": {
+        "400": {
+          "imgHeight": "150",
+          "normal": "/assets/plugins/cover-content/images/index/index-1/cover-photo-1-400X200-blurred.jpg",
+          "blurred": "/assets/plugins/cover-content/images/index/index-1/cover-photo-1-400X200-blurred.jpg"
+        },
+        "500": {
+          "imgHeight": "150",
+          "normal": "/assets/plugins/cover-content/images/index/index-1/cover-photo-1-500X200-blurred.jpg",
+          "blurred": "/assets/plugins/cover-content/images/index/index-1/cover-photo-1-500X200-blurred.jpg"
+        },
+        "600": {
+          "imgHeight": "300",
+          "normal": "/assets/plugins/cover-content/images/index/index-1/cover-photo-1-600X300-blurred.jpg",
+          "blurred": "/assets/plugins/cover-content/images/index/index-1/cover-photo-1-600X300-blurred.jpg"
+        },
+        "800": {
+          "imgHeight": "300",
+          "normal": "/assets/plugins/cover-content/images/index/index-1/cover-photo-1-800X300-blurred.jpg",
+          "blurred": "/assets/plugins/cover-content/images/index/index-1/cover-photo-1-800X300-blurred.jpg"
+        },
+        "1000": {
+          "imgHeight": "600",
+          "normal": "/assets/plugins/cover-content/images/index/index-1/cover-photo-1-1000X450-blurred.jpg",
+          "blurred": "/assets/plugins/cover-content/images/index/index-1/cover-photo-1-1000X450-blurred.jpg"
+        },
+        "1200": {
+          "imgHeight": "600",
+          "normal": "/assets/plugins/cover-content/images/index/index-1/cover-photo-1-1200X450-blurred.jpg",
+          "blurred": "/assets/plugins/cover-content/images/index/index-1/cover-photo-1-1200X450-blurred.jpg"
+        },
+        "1600": {
+          "imgHeight": "600",
+          "normal": "/assets/plugins/cover-content/images/index/index-1/cover-photo-1-1600X450-blurred.jpg",
+          "blurred": "/assets/plugins/cover-content/images/index/index-1/cover-photo-1-1600X450-blurred.jpg"
+        },
+        "2000": {
+          "imgHeight": "600",
+          "normal": "/assets/plugins/cover-content/images/index/index-1/cover-photo-1-2000X450-blurred.jpg",
+          "blurred": "/assets/plugins/cover-content/images/index/index-1/cover-photo-1-2000X450-blurred.jpg"
+        }
+      }
+    }
   }
 }

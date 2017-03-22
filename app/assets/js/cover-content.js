@@ -62,7 +62,6 @@ class CoverContent {
       } else {
         this.getImage(pageType);
       }
-
     }
 
   }
@@ -131,7 +130,6 @@ class CoverContent {
   generateMarkupVideoMobile(pageType) {
     var vimeoElement = document.createElement('iframe');
 
-
     $(vimeoElement).attr({
       'width': '420',
       'height': '236',
@@ -140,7 +138,6 @@ class CoverContent {
       'mozallowfullscreen': '',
       'allowfullscreen': ''
     });
-
 
     if ((pageType === "hero") || (pageType === "flexible")) {
       $(vimeoElement).attr({
@@ -160,7 +157,6 @@ class CoverContent {
   }
 
   generateMarkupBgcolor() {
-
     var coverWrapper = document.createElement('div'),
     colorWrapper = $(coverWrapper).clone(),
     windowWidth = $(window).width(),
@@ -173,6 +169,7 @@ class CoverContent {
 
     $('#main').prepend(coverWrapper);
   }
+
   generateMarkupBranding() {
     var brandingWrapper = document.createElement('div'),
     lang = Hiof.view.languageCheck(),
@@ -185,7 +182,6 @@ class CoverContent {
     $(brandingWrapper).addClass("branding").append(logo);
     $('#main').prepend(brandingWrapper);
   }
-
 
   generateMarkupVideo(data) {
     var coverWrapper = document.createElement('div'),
@@ -290,13 +286,12 @@ class CoverContent {
 
   generateMarkupPicture(data) {
 
-
     var coverWrapper = document.createElement('div'),
-    photoWrapper = $(coverWrapper).clone(),
-    blurWrapper = $(coverWrapper).clone(),
-    windowWidth = $(window).width(),
-    windowHeight = $(window).height(),
-    size;
+        photoWrapper = $(coverWrapper).clone(),
+        blurWrapper = $(coverWrapper).clone(),
+        windowWidth = $(window).width(),
+        windowHeight = $(window).height(),
+        size;
 
     $(coverWrapper).addClass("cover").attr("id", "cover");
     $(photoWrapper).addClass("cover-photo cover-photo-normal");

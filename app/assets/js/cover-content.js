@@ -45,7 +45,7 @@ class CoverContent {
       pageType = "page";
     }
 
-    if((windowWidth <= 955) && (pageType === "homepage")){
+    if((windowWidth <= 899) && (pageType === "homepage")){
       this.addGfx(pageType);
     } else if ((windowWidth <= 350 && ((pageType === "homepage") || (pageType === "hero") || (pageType === "bachelor") || (pageType === "master") || (pageType === "flexible")))) {
       // Dont add a cover-photo on the smallest screens

@@ -12,7 +12,7 @@
     "handlebars": "~2.0.0",
     "pathjs": "https://github.com/mtrpcic/pathjs.git",
     "colors": "https://github.com/hiof/colors.git",
-    "frontend": "https://github.com/hiof/frontend.git#feature/extract-code-to-plugins",
+    "frontend": "https://github.com/hiof/frontend.git",
     "jQuery-ajaxTransport-XDomainRequest": "https://github.com/MoonScript/jQuery-ajaxTransport-XDomainRequest.git",
     "detectjs": "https://github.com/darcyclarke/Detect.js.git",
     "sass-mq": "~3.2.2"
